@@ -57,20 +57,12 @@ def test_03_create_potential():
     login_uat()
     touch(wait(Template(r"tpl1648826519621.png", record_pos=(-0.347, 0.536), resolution=(1080, 1920))))
 #     time.sleep(2)
-    poco(uat + ':id/btn_add').click()
-    poco(uat + ':id/et_name').set_text('Airtest')
-    poco(uat + ':id/rb_sexMan').click()
-    poco(uat + ':id/et_phone').set_text('10'+ phone)
-    poco(uat + ':id/ra_item').click()
+    add_potential()
     
-    poco(uat + ':id/tv_sale_person').click()
-    touch(wait(Template(r"tpl1648833203008.png", record_pos=(-0.271, -0.088), resolution=(1080, 1920))))
-    poco(uat + ':id/car_assign_confirm_btn').click()
-    poco(uat + ':id/tv_next_follow_date').click()
-    poco(uat + ':id/btn_confirm').click()
-    poco(uat + ':id/btn_complete').click()
-    
-    result = poco(uat + ':id/tv_right').click()
+    result = poco(uat + ':id/tv_right').get_text
+#     assert_equal(result,'10'+phone,'测试新增潜客')
+    for i in range(2):
+        keyevent('BACK')
     
        
 test_03_create_potential()
